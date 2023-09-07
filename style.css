@@ -1,0 +1,285 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+body{
+  overflow: hidden;
+}
+
+/* CSS for Intro_Page */
+#intro_Page{
+  height: 100vh;
+  padding:20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap:20px;
+  background: url("./Dragon_Intro.jpeg") no-repeat;
+  background-size: 100% 100%;
+}
+#Info{
+  font-size: 24px;
+  text-align: center;
+  padding:10px 20px;
+  border-radius: 6px;
+  background: linear-gradient(rgb(255, 0, 0),white,rgb(128, 0, 30));
+  color: rgb(32, 3, 96);
+  position:absolute;
+  top:0;
+}
+#startGame{
+  all:unset;
+  font-size: 40px;
+  font-weight: bold;
+  padding:10px 30px;
+  border-radius: 8px;
+  background:linear-gradient(rgb(27, 10, 219),rgb(208, 13, 45),white);
+  color:cyan;
+  cursor: pointer;
+  position: relative;
+  top:67vh
+}
+
+/* CSS for Game Page */
+.gameContainer{
+  overflow: hidden;
+  background-image: url(bg.png);
+  background-repeat: no-repeat;
+  background-size:100vw 100vh;
+  width:100vw;
+  height:100vh;
+  display: none;
+}
+.dino{
+  background-image: URL(dino.png);
+  background-repeat: no-repeat;
+  background-size:cover;
+  width: 182px;
+  height: 94px;
+  position:absolute;
+  bottom: 0;
+  left:50px;
+}
+.dragon{
+  background-image: URL(dragon.png);
+  background-repeat: no-repeat;
+  background-size:cover;
+  width: 133px;
+  height: 87px;
+  position: absolute;
+  bottom: 0;
+  left:64vw;
+}
+.gameOver{
+  font-family:Arial, Helvetica, sans-serif;
+  font-size: 28px;
+  color:brown;
+  letter-spacing: 0.5px;
+  width:100%;
+  text-align: center;
+  margin-top: 120px;
+}
+.scoreCont,
+#hiscoreBox{
+  position: absolute;
+  padding:3px 14px;
+  font-size: 18px;
+  border:2px solid black;
+  color:rgb(139, 6, 6);
+  font-family:Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: 700;
+}
+.scoreCont{
+  top:40px;
+  right:15px;
+}
+#hiscoreBox{
+  margin-top: 10px;
+  top:70px;
+  right:23px;
+}
+/* BackGround Music Button */
+button{
+  position: absolute;
+  left:15px;
+  top:40px;
+  padding:6px 18px;
+  font-size: 18px;
+  background-color: rgb(139, 6, 6);
+  color:white;
+  border: none;
+  border-radius: 5px;
+  font-weight: 600;
+  cursor: pointer;
+}
+button:hover{
+  opacity: 0.9;
+}
+button:active{
+  opacity:1;
+}
+
+/* CSS for restart Button */
+#restart-btn{
+  position: absolute;
+  left:40%;
+  top:260px;
+  font-weight: 600;
+  width:200px;
+  background-color: rgb(139, 6, 6);
+  color:white;
+  font-size: 18px;
+  border-radius: 20px;
+  cursor: pointer;
+}
+#restart-btn:hover{
+  opacity: 0.8;
+}
+#restart-btn:active{
+  opacity:1;
+}
+
+/* CSS for animation */
+.animatedDinoMove{
+  animation: dinoMove 0.6s linear;
+}
+.animatedDinoMove1{
+  animation: dinoMove1 0.6s linear;
+}
+.animatedDragonMove{
+  animation: dragonMove linear 8s infinite;
+}
+@keyframes dinoMove{
+  0%{
+    bottom:0;
+  }
+  50%{
+    bottom:300px;
+  }
+  100%{
+    bottom:0;
+  }
+}
+@keyframes dragonMove{
+  0%{
+    transform: translateX(1500px);
+  }
+  100%{
+    transform: translateX(-1500px);
+  }
+}
+
+/* For Mobile */
+.animatedDinoMove1{
+  animation: dinoMove1 0.6s linear;
+}
+@keyframes dinoMove1{
+  0%{
+    bottom:0;
+  }
+  50%{
+    bottom:180px;
+  }
+  100%{
+    bottom:0;
+  }
+}
+
+
+/* For Responsiveness */
+@media (max-width:920px){
+  #Info{
+    font-size: 16px;
+  }
+  #restart-btn{
+    left:37%
+  }
+}
+@media (max-width:620px){
+  #Info{
+    font-size: 10px;
+  }
+}
+@media (max-width:545px){
+  #restart-btn{
+    left:30%
+  }
+}
+@media (max-width:430px){
+  #Info{
+    border-radius: 0;
+  }
+  .text{
+    font-size: 24px;
+  }
+  .gameOver{
+    margin-top: 140px;
+  }
+  .scoreCont{
+    top:90px;
+    right:50%;
+  }
+  #hiscoreBox{
+    top:80px;
+  }
+  button{
+    left:20%;
+  }
+  .dragon{
+    width:75px;
+    height:50px;
+  }
+  .dino{
+    width:100px;
+    height:50px;
+  }
+  #restart-btn{
+    left:25%;
+  }
+  .animatedDragonMove{
+    animation: dragonMove linear 6s infinite;
+  }
+  @keyframes dragonMove{
+    0%{
+      transform: translateX(700px);
+    }
+    100%{
+      transform: translateX(-700px);
+    }
+  }
+}
+@media (max-width:376px){
+  button{
+    left:18%;
+  }
+  #restart-btn{
+    left:22%;
+  }
+}
+@media (max-width:281px){
+  #startGame{
+    font-size: 22px;
+  }
+  .text{
+    font-size: 18px;
+  }
+  .gameOver{
+    margin-top: 140px;
+  }
+  .scoreCont{
+    font-size: 12px;
+    top:90px;
+    right:50%;
+  }
+  #hiscoreBox{
+    top:80px;
+    font-size: 12px;
+  }
+  button{
+    font-size: 12px;
+    left:20%;
+  }
+  #restart-btn{
+    left:13%
+  }
+}
